@@ -14,14 +14,9 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(assets/.*)", "dest": "/dist/$1" },
+    { "src": "/(.*)", "dest": "/dist/index.html" }
   ],
   "env": {
     "EMPORIA_USERNAME": "n.gafsi@hotmail.com",
