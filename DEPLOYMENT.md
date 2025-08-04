@@ -16,7 +16,7 @@ EMPORIA_USERNAME=n.gafsi@hotmail.com
 EMPORIA_PASSWORD=Emp@233730
 ```
 
-**Note :** Les credentials sont déjà configurés dans le code pour l'appareil "Lord".
+**Note :** Les credentials sont déjà configurés dans `vercel.json` pour simplifier le déploiement.
 
 ### 2. Structure des Fichiers
 
@@ -81,16 +81,11 @@ vercel
 
 ### 1. Test de l'API
 ```bash
-# Test health check avec PyEmVue
+# Test health check
 curl https://votre-app.vercel.app/api/health
 
 # Test live data
 curl https://votre-app.vercel.app/api/energy/live
-
-# Test données personnalisées
-curl -X POST https://votre-app.vercel.app/api/energy/custom \
-  -H "Content-Type: application/json" \
-  -d '{"start_time":"2024-01-15 00:00:00","end_time":"2024-01-15 23:59:59","scale":"HOUR"}'
 ```
 
 ### 2. Test de l'App
@@ -98,22 +93,12 @@ curl -X POST https://votre-app.vercel.app/api/energy/custom \
 - Vérifiez que les données s'affichent
 - Testez la navigation temporelle
 
-### 3. Test avec les scripts
-```bash
-# Test général
-node test-deployment.js https://votre-app.vercel.app
-
-# Test spécifique PyEmVue
-node test-pyemvue.js https://votre-app.vercel.app
-```
-
 ## 🛠️ Dépannage
 
 ### Erreur 500 - API Python
 - Vérifiez les variables d'environnement
 - Consultez les logs Vercel
-- Testez l'authentification PyEmVue
-- Vérifiez que l'appareil "Lord" existe
+- Testez l'authentification Emporia
 
 ### Erreur CORS
 - L'API Python inclut les headers CORS
@@ -158,8 +143,7 @@ vercel --prod
 - [ ] API Python fonctionne localement
 - [ ] Build Vercel réussi
 - [ ] Health check OK
-- [ ] Données PyEmVue accessibles
-- [ ] Appareil "Lord" détecté
+- [ ] Données Emporia accessibles
 - [ ] App React fonctionne
 - [ ] Navigation temporelle OK
 

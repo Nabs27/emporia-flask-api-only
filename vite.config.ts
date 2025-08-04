@@ -13,13 +13,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          charts: ['react-chartjs-2', 'chart.js'],
+          charts: ['recharts'],
           utils: ['date-fns']
         }
       }
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-chartjs-2', 'chart.js', 'date-fns']
+    include: ['react', 'react-dom', 'recharts', 'date-fns']
   }
 }); 

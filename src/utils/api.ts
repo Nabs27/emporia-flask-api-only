@@ -1,7 +1,6 @@
-// Utiliser l'API Python déployée sur Vercel
+// Revenir à l'utilisation du serveur Flask local pour éviter les problèmes CORS
 export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
-  // URL de l'API Vercel - utilise la même origine que l'app
-  const baseUrl = window.location.origin;
+  const baseUrl = 'http://localhost:5000'; // URL de votre serveur Flask
   
   try {
     const response = await fetch(`${baseUrl}${endpoint}`, {

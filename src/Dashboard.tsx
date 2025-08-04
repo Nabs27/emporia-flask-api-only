@@ -283,7 +283,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onShowDetails }) => {
     loadDashboardData();
     
     // Mise à jour live toutes les 5 secondes
-    updateIntervalRef.current = setInterval(updateLiveData, 5000) as unknown as number;
+    updateIntervalRef.current = setInterval(updateLiveData, 5000);
     
     return () => {
       if (updateIntervalRef.current) {

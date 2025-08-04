@@ -4,6 +4,7 @@ import { fetchApi } from './utils/api';
 import { TimeNavigationChart } from './components/TimeNavigationChart';
 import {
   getMonthlyTimeRange, 
+  getDailyTimeRange, 
   getYearlyTimeRange,
   getHourlyTimeRange,
   formatDateForApi, 
